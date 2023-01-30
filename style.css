@@ -1,0 +1,260 @@
+:root {
+   font-size: 16px;
+
+  --ff-primary: Arial, Helvetica, sans-serif;
+  --ff-bold: 600;
+
+  --max-width-container: 25rem;
+
+  --outline: 1px solid black;
+  --bgcolor: rgb(255, 253, 251);
+  --color-main: black;
+  --color-compl: rgb(118, 0, 0);
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.2;
+  background-color: var(--bgcolor);
+  font-family: var(--ff-primary);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  border: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General */
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: .7rem;
+}
+
+#container {
+  flex-grow: 1;
+  /* border: 5px solid red; */
+  width: 100%;
+  margin-inline: auto;
+  max-height: calc(100vw * 1.61);
+  display: flex;
+  flex-direction: column;
+  outline: 2px solid var(--color-main);;
+}
+@media only screen and (min-width: 40rem) {
+  #container {
+   max-width: var(--max-width-container);
+   max-height: calc(var(--max-width-container) * 1.6);
+  }
+}
+/* Header */
+#hexheader {
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  outline: var(--outline);
+}
+#number {
+  width: 31%;
+  text-align: center;
+  color: var(--color-main);
+  font-size: clamp(2rem, 1rem + 10vh, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#name {
+  flex-grow: 1;
+  text-align: left;
+  font-size: clamp(2rem, 1rem + 10vh, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: .5rem;
+  line-height: 1.1;
+  /* color: var(--color-compl); */
+}
+
+/* Big hexagram */
+#hexbody {
+  flex-grow: 1;
+  display: flex;
+  justify-content: ;
+  outline: var(--outline);
+  font-size: 1rem;
+}
+#hex {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  outline: var(--outline);
+}
+.hex-cell {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: 1px solid rgb(255, 68, 0); */
+}
+.yao-num {
+  padding: 0 .5rem 0 1rem;
+  /* border: 1px solid rgb(0, 36, 128); */
+}
+.yao {
+  flex-grow: 1;
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.yao-yin {
+  height: 1.7cqb;
+  background-color: var(--color-main);;
+  width: 40%;
+}
+.yao-yang {
+  height: 1.7cqb;
+  background-color: var(--color-main);
+  flex-grow: 1;
+}
+.darker {
+  background-color: rgb(232, 232, 232);
+  mix-blend-mode: multiply;
+}
+
+/* Side column */
+#column {
+  width: 31%;
+  display:flex;
+  flex-direction: column;
+  /* align-items: stretch; */
+}
+.column-cell {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  outline: var(--outline);
+  padding: .2rem;
+}
+.trigram {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+#trig-above {
+  border-bottom: 1px solid var(--color-main);;
+}
+.op-mut-title{
+  text-transform: uppercase;
+}
+.highlight {
+  font-weight: var(--ff-bold);
+}
+.op-mut-hex{
+  height: 40%;
+  width: 50%;
+  max-width: 3rem;
+  display: flex;
+  flex-direction: column;
+  /* padding: 0 2rem 0; */
+  /* border: 1px solid blue; */
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+.side-yao-cont {
+  flex-grow: 1;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.side-yao-yin {
+  height: .5cqb;
+  background-color: var(--color-main);
+  width: 40%;
+}
+.side-yao-yang {
+  height: .5cqb;
+  background-color: var(--color-main);
+  flex-grow: 1;
+}
+
+/* Prev/Next Navigation */
+#nav {
+  height: 15%;
+  padding: .5rem;
+  outline: var(--outline);
+  /* display: flex;
+  flex-direction: row;
+} */
+.nav-item {
+  flex-grow: 1;
+}
+
+
