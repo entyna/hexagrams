@@ -251,11 +251,12 @@ main {
   height: 15%;
   padding: 1rem;
   outline: var(--outline);
-  /* display: flex;
+  display: flex;
   flex-direction: row;
 } */
-.nav-item {
+#nav > button{
   flex-grow: 1;
+  background-color: aquamarine;
 }
 
 
